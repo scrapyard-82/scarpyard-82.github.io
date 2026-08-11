@@ -1,16 +1,16 @@
 
 :root {
   --bg: #000000;
-  --bg-alt: #0a0a0a;
-  --text: #1DCEB4;
-  --heading: #55FF00;
-  --bold: #fcf807;
-  --italic: #FF3D9A;
-  --code: #55FF00;
-  --link: #00ff41;
+  --bg-alt: #050b0d;
+  --text: #8fd8e8;
+  --heading: #00e5ff;
+  --bold: #ff9d00;
+  --italic: #4fc3f7;
+  --code: #00e5ff;
+  --link: #00e5ff;
   --link-visited: #ff9d00;
-  --border: #1f3d1f;
-  --muted: #5a5a5a;
+  --border: #0d3b45;
+  --muted: #3d5a63;
 }
 
 * { box-sizing: border-box; }
