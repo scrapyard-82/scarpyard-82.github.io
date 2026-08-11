@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Welcome to the Terminal :: TERMINAL://NOTES</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div id="boot-screen"><div class="boot-line" style="animation-delay:0.00s">BIOS v2.6 ... OK</div>
+<div class="boot-line" style="animation-delay:0.12s">LOADING KERNEL ... OK</div>
+<div class="boot-line" style="animation-delay:0.24s">MOUNTING /notes ... OK</div>
+<div class="boot-line" style="animation-delay:0.36s">MOUNTING /images ... OK</div>
+<div class="boot-line" style="animation-delay:0.48s">INITIALIZING DISPLAY ... OK</div>
+<div class="boot-line" style="animation-delay:0.60s">&nbsp;</div>
+<div class="boot-line" style="animation-delay:0.72s">WELCOME, USER.</div>
+</div>
+<div class="crt-overlay"></div>
+<div class="grain-overlay"></div>
+<div class="wrap">
+  <nav class="sidebar" id="sidebar">
+    <div class="site-title">TERMINAL://NOTES</div>
+    <div class="site-subtitle">personal knowledge base // est. 2026</div>
+    <button class="menu-toggle" id="menu-toggle">[ menu ]</button>
+    <div class="tree">
+      <ul class="tree-files"><li class=""><a href="/index.html">index</a></li></ul>
+      <ul class="tree-files">
+<li class="active"><a href="/notes/welcome.html">Welcome to the Terminal</a></li>
+</ul>
+<div class="tree-dir">articles</div>
+<ul class="tree-files">
+<li class=""><a href="/notes/articles/example-article.html">Example Article</a></li>
+</ul>
+
+    </div>
+  </nav>
+  <main>
+    <div class="crumbs"><a href="/index.html">home</a> / Welcome to the Terminal</div>
+    <article><h1 id="welcome-to-the-terminal">Welcome to the Terminal</h1>
+<p>This is your <strong>personal notes system</strong>, styled like an old <em>BBS terminal</em> from the days
+of dial-up modems and green phosphor screens.</p>
+<h2 id="how-it-works">How it works</h2>
+<ul>
+<li>Write notes as plain Markdown in the <code>notes/</code> folder.</li>
+<li>Put images in the <code>images/</code> folder and reference them like <code>![alt](/images/foo.png)</code>.</li>
+<li>Subfolders (like <code>notes/articles/</code>) become sections, shown in the sidebar tree.</li>
+<li>Run <code>python build.py</code> to regenerate the static site into <code>docs/</code>.</li>
+<li>Push to GitHub, enable Pages on the <code>docs/</code> folder, done.</li>
+</ul>
+<h2 id="styling">Styling</h2>
+<p>Colors for <code>headings</code>, <strong>bold</strong>, <em>italic</em>, and <code>inline code</code> are all controlled from
+<code>config.json</code> — no need to touch the CSS unless you want to.</p>
+<blockquote>
+<p>Blockquotes look like old terminal system messages.</p>
+</blockquote>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">hello</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;this is a code block&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Check out the <a href="/notes/articles/example-article.html">example article</a> for a demo with an image.</p></article>
+    <footer>generated 2026-08-11 23:59 :: terminal notes v2.0</footer>
+  </main>
+</div>
+<script>
+
+(function() {
+  var el = document.getElementById('boot-screen');
+  if (!el) return;
+  if (localStorage.getItem('bbs_booted')) {
+    el.classList.add('hidden');
+    return;
+  }
+  localStorage.setItem('bbs_booted', '1');
+  setTimeout(function() {
+    el.classList.add('fade-out');
+    setTimeout(function() { el.classList.add('hidden'); }, 450);
+  }, 1600);
+})();
+
+var t = document.getElementById('menu-toggle');
+if (t) t.addEventListener('click', function() {
+  document.getElementById('sidebar').classList.toggle('open');
+});
+</script>
+</body>
+</html>

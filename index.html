@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>index :: TERMINAL://NOTES</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div id="boot-screen"><div class="boot-line" style="animation-delay:0.00s">BIOS v2.6 ... OK</div>
+<div class="boot-line" style="animation-delay:0.12s">LOADING KERNEL ... OK</div>
+<div class="boot-line" style="animation-delay:0.24s">MOUNTING /notes ... OK</div>
+<div class="boot-line" style="animation-delay:0.36s">MOUNTING /images ... OK</div>
+<div class="boot-line" style="animation-delay:0.48s">INITIALIZING DISPLAY ... OK</div>
+<div class="boot-line" style="animation-delay:0.60s">&nbsp;</div>
+<div class="boot-line" style="animation-delay:0.72s">WELCOME, USER.</div>
+</div>
+<div class="crt-overlay"></div>
+<div class="grain-overlay"></div>
+<div class="wrap">
+  <nav class="sidebar" id="sidebar">
+    <div class="site-title">TERMINAL://NOTES</div>
+    <div class="site-subtitle">personal knowledge base // est. 2026</div>
+    <button class="menu-toggle" id="menu-toggle">[ menu ]</button>
+    <div class="tree">
+      <ul class="tree-files"><li class="active"><a href="/index.html">index</a></li></ul>
+      <ul class="tree-files">
+<li class=""><a href="/notes/welcome.html">Welcome to the Terminal</a></li>
+</ul>
+<div class="tree-dir">articles</div>
+<ul class="tree-files">
+<li class=""><a href="/notes/articles/example-article.html">Example Article</a></li>
+</ul>
+
+    </div>
+  </nav>
+  <main>
+    <div class="crumbs">home</div>
+    <article><pre class="ascii-banner">
+ _____                   _             _
+|_   _|__ _ __ _ __ ___ (_)_ __   __ _| |
+  | |/ _ \ '__| '_ ` _ \| | '_ \ / _` | |
+  | |  __/ |  | | | | | | | | | | (_| | |
+  |_|\___|_|  |_| |_| |_|_|_| |_|\__,_|_|
+        :: N O T E S   T E R M I N A L ::
+</pre><h1>Index</h1>
+<ul class="index-list">
+<li><a href="/notes/welcome.html">Welcome to the Terminal</a></li>
+</ul>
+<h2>articles</h2>
+<ul class="index-list">
+<li><a href="/notes/articles/example-article.html">Example Article</a></li>
+</ul>
+</article>
+    <footer>generated 2026-08-11 23:59 :: terminal notes v2.0</footer>
+  </main>
+</div>
+<script>
+
+(function() {
+  var el = document.getElementById('boot-screen');
+  if (!el) return;
+  if (localStorage.getItem('bbs_booted')) {
+    el.classList.add('hidden');
+    return;
+  }
+  localStorage.setItem('bbs_booted', '1');
+  setTimeout(function() {
+    el.classList.add('fade-out');
+    setTimeout(function() { el.classList.add('hidden'); }, 450);
+  }, 1600);
+})();
+
+var t = document.getElementById('menu-toggle');
+if (t) t.addEventListener('click', function() {
+  document.getElementById('sidebar').classList.toggle('open');
+});
+</script>
+</body>
+</html>

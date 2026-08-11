@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Example Article :: TERMINAL://NOTES</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div id="boot-screen"><div class="boot-line" style="animation-delay:0.00s">BIOS v2.6 ... OK</div>
+<div class="boot-line" style="animation-delay:0.12s">LOADING KERNEL ... OK</div>
+<div class="boot-line" style="animation-delay:0.24s">MOUNTING /notes ... OK</div>
+<div class="boot-line" style="animation-delay:0.36s">MOUNTING /images ... OK</div>
+<div class="boot-line" style="animation-delay:0.48s">INITIALIZING DISPLAY ... OK</div>
+<div class="boot-line" style="animation-delay:0.60s">&nbsp;</div>
+<div class="boot-line" style="animation-delay:0.72s">WELCOME, USER.</div>
+</div>
+<div class="crt-overlay"></div>
+<div class="grain-overlay"></div>
+<div class="wrap">
+  <nav class="sidebar" id="sidebar">
+    <div class="site-title">TERMINAL://NOTES</div>
+    <div class="site-subtitle">personal knowledge base // est. 2026</div>
+    <button class="menu-toggle" id="menu-toggle">[ menu ]</button>
+    <div class="tree">
+      <ul class="tree-files"><li class=""><a href="/index.html">index</a></li></ul>
+      <ul class="tree-files">
+<li class=""><a href="/notes/welcome.html">Welcome to the Terminal</a></li>
+</ul>
+<div class="tree-dir">articles</div>
+<ul class="tree-files">
+<li class="active"><a href="/notes/articles/example-article.html">Example Article</a></li>
+</ul>
+
+    </div>
+  </nav>
+  <main>
+    <div class="crumbs"><a href="/index.html">home</a> / articles / Example Article</div>
+    <article><h1 id="example-article">Example Article</h1>
+<p>This note lives in <code>notes/articles/</code>, so it's automatically grouped under the
+<strong>Articles</strong> section in the sidebar.</p>
+<h2 id="image-support">Image support</h2>
+<p><img alt="A placeholder image" src="/images/placeholder.png" /></p>
+<p>Images referenced with <code>/images/...</code> are pulled straight from your <code>images/</code> folder.</p>
+<h2 id="nested-sections-work-too">Nested sections work too</h2>
+<p>You can nest folders as deep as you like, e.g. <code>notes/articles/2026/</code>, and each level
+gets its own section in the tree.</p></article>
+    <footer>generated 2026-08-11 23:59 :: terminal notes v2.0</footer>
+  </main>
+</div>
+<script>
+
+(function() {
+  var el = document.getElementById('boot-screen');
+  if (!el) return;
+  if (localStorage.getItem('bbs_booted')) {
+    el.classList.add('hidden');
+    return;
+  }
+  localStorage.setItem('bbs_booted', '1');
+  setTimeout(function() {
+    el.classList.add('fade-out');
+    setTimeout(function() { el.classList.add('hidden'); }, 450);
+  }, 1600);
+})();
+
+var t = document.getElementById('menu-toggle');
+if (t) t.addEventListener('click', function() {
+  document.getElementById('sidebar').classList.toggle('open');
+});
+</script>
+</body>
+</html>
