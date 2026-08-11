@@ -2,11 +2,11 @@
 :root {
   --bg: #000000;
   --bg-alt: #0a0a0a;
-  --text: #c8c8c8;
-  --heading: #00ff41;
-  --bold: #ffb000;
-  --italic: #00e5ff;
-  --code: #ff2079;
+  --text: #1DCEB4;
+  --heading: #55FF00;
+  --bold: #fcf807;
+  --italic: #FF3D9A;
+  --code: #55FF00;
   --link: #00ff41;
   --link-visited: #ff9d00;
   --border: #1f3d1f;
@@ -36,20 +36,6 @@ html, body {
   background-repeat: repeat;
 }
 
-
-.crt-overlay {
-  pointer-events: none;
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-  background: repeating-linear-gradient(
-    to bottom,
-    rgba(255,255,255,0.025) 0px,
-    rgba(255,255,255,0.025) 1px,
-    transparent 1px,
-    transparent 3px
-  );
-}
 
 
 /* ---- Boot screen (first visit only, see boot.js) ---- */
